@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      REACT HOOK FORM
+      REACT Hook FORM
       <FormProvider {...methods}>
         <form className="wrapperForm" onSubmit={handleSubmit(onSubmit)}>
           <TextInput
