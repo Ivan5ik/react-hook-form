@@ -13,7 +13,7 @@ import { ImageInput } from './components/imageInput';
 import { EmailInput } from './components/emailInput';
 import { DateInput } from './components/dateInput';
 import { CheckBoxInput } from './components/checkBoxinput';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { CustomSelect } from './components/customSelect';
 
 type Inputs = {
@@ -31,6 +31,21 @@ function App() {
   const methods = useForm<Inputs>({
     mode: 'all',
   });
+
+  //code animation
+
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAnimation(true);
+    }, 1000);
+  }, []);
+
+
+
+  //code animation
+
 
   const { register, handleSubmit, reset, watch, setValue, control } = methods;
 
@@ -115,13 +130,57 @@ function App() {
               />
             )}
           />
+
+
           <ImageInput />
         </form>
-        <button onClick={() => setValue('textName', 'testik')}>
+
+          <button onClick={() => setValue('textName', 'testik')}>
           New value in form
         </button>
       </FormProvider>
-    </div>
+      <img src="./logo192.png" alt="Logo" />
+
+      <div className="container">
+        <video autoPlay loop muted>
+          <source src="./testVidos.mp4" type="video/mp4" />
+        </video>
+        <div className='text-box'>
+          <div className='wrapperAllText'>
+            <span className='w'>W</span>
+            <span className='o'>o</span>
+            <span className='r'>r</span>
+            <span className='k'>k</span>
+            <span className='s'>s</span>
+            <span className='dot'>.</span>
+          </div>
+          {/* <span className='dot'>.</span> */}
+        </div>
+      </div>
+
+
+
+      {/* <div className="animation-container">
+      <div className="word">
+        <span className={`initial ${showAnimation ? 'appear' : ''}`}>W</span>
+        <span className={`remaining ${showAnimation ? 'slide-in' : ''}`}>
+          <span>o</span>
+          <span>r</span>
+          <span>k</span>
+          <span>s</span>
+        </span>
+        <span className={`dot ${showAnimation ? 'move-dot' : ''}`}>.</span>
+      </div>
+    </div> */}
+
+  
+    
+
+      
+  </div>
+
+
+
   );
 }
 

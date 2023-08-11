@@ -5,9 +5,136 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* margin: 0; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 3000px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+/* Video style */
+
+.container{
+  width: 50%;
+  height: 100px;
+  position: relative;
+}
+.container video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%; 
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 900;
+  mix-blend-mode: screen;
+  /* animation-name: letterSpace; */
+  /* animation-duration: 1.5s;
+  animation-fill-mode: forwards; */
+}
+
+.wrapperAllText{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+
+
+
+.w{
+  display: block;
+}
+
+.o,.r,.k,.s{
+  letter-spacing: normal;
+  position: absolute;
+  left: 38px;
+  animation-name: o;
+  animation-duration: 1.5s;
+}
+
+.r{
+  animation-name: r;
+  left: 62px;
+}
+
+.k{
+  animation-name: k;
+  left: 79px;
+}
+
+.s{
+  animation-name: s;
+  left: 101px;
+}
+
+.dot{
+  position: absolute;
+  animation-name: dot;
+  background-color: rgb(243, 149, 149);
+  height: 14px;
+  top: 0px;
+  right: 0px;
+  padding-right: 20px;
+}
+
+
+
+@keyframes o{
+0%{
+  left: 28px;
+}
+100%{
+};
+}
+
+
+@keyframes r{
+  0%{
+    left: 45px;
+  }
+  100%{
+  }
+}
+
+@keyframes k{
+  0%{
+    left: 55px;
+  }
+  100%{
+  }
+}
+
+@keyframes s{
+  0%{
+    left: 70px;
+  }
+  100%{
+  }
+}
+
+/* Video style */
