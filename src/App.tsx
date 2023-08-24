@@ -5,6 +5,8 @@ import {
   useForm,
 } from 'react-hook-form';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Підключення стилів
 import { TextInput } from './components/textInput';
 import { RangeInput } from './components/rangeInput';
 import { PassWordInput } from './components/passwordInput';
@@ -60,6 +62,11 @@ function App() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     reset();
   };
+
+
+  useEffect(() => {
+    AOS.init(); 
+  }, []);
 
   return (
     <div className="App">
@@ -141,13 +148,26 @@ function App() {
       </FormProvider>
       <img src="./logo192.png" alt="Logo" />
 
-      <div className="container">
+     
+
+
+<div className='wrapperGrid'>
+  <header className='header'>Header</header>
+  <div className='main'>main</div>
+  <div className='sidebar1'>sidebar1</div>
+  <div className='sidebar2'>sidebar2</div>
+  <footer className='footer'>Footer</footer>
+</div>
+
+{/* <div data-aos="fade-up" data-aos-duration="1000"> */}
+<div className="container">
         <video autoPlay loop muted>
           <source src="./testVidos.mp4" type="video/mp4" />
         </video>
+
         <div className='text-box'>
           <div className='wrapperAllText'>
-            <span className='w'>W</span>
+            <span className='w'>w</span>
             <span className='o'>o</span>
             <span className='r'>r</span>
             <span className='k'>k</span>
@@ -157,8 +177,7 @@ function App() {
           {/* <span className='dot'>.</span> */}
         </div>
       </div>
-
-
+{/* </div> */}
 
       {/* <div className="animation-container">
       <div className="word">

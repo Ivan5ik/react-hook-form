@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,37 +12,33 @@ body {
   /* align-items: center; */
   height: 3000px;
   font-family: Arial, sans-serif;
-  overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-
-
 /* Video style */
 
-.container{
+.container {
   width: 50%;
   height: 100px;
   position: relative;
 }
-.container video{
+.container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.text-box{
+.text-box {
   position: absolute;
   top: 0;
   left: 0;
   background: rgb(255, 255, 255);
   height: 100%;
-  width: 100%; 
+  width: 100%;
   color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
@@ -55,86 +51,138 @@ code {
   animation-fill-mode: forwards; */
 }
 
-.wrapperAllText{
+.wrapperAllText {
   position: relative;
   display: flex;
   justify-content: flex-start;
-  
 }
 
-
-
-
-.w{
+.w {
   display: block;
 }
 
-.o,.r,.k,.s{
+.o,
+.r,
+.k,
+.s {
   letter-spacing: normal;
   position: absolute;
-  left: 38px;
+  left: 33px;
   animation-name: o;
   animation-duration: 1.5s;
 }
 
-.r{
+.r {
   animation-name: r;
-  left: 62px;
+  left: 58px;
 }
 
-.k{
+.k {
   animation-name: k;
-  left: 79px;
+  left: 75px;
 }
 
-.s{
+.s {
   animation-name: s;
-  left: 101px;
+  left: 98px;
 }
 
-.dot{
+.dot {
   position: absolute;
-  animation-name: dot;
-  background-color: rgb(243, 149, 149);
-  height: 14px;
+  background-color: rgb(255, 255, 255);
+  height: 38px;
   top: 0px;
-  right: 0px;
-  padding-right: 20px;
+  right: -103px;
+  padding-right: 90px;
+  animation-name: dot;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
-
-
-@keyframes o{
-0%{
-  left: 28px;
+@keyframes dot {
+  0% {
+    padding-right: 90px;
+  }
+  100% {
+    padding-right: 0px;
+  }
 }
-100%{
-};
+
+@keyframes o {
+  0% {
+    left: 28px;
+  }
+  100% {
+  }
 }
 
-
-@keyframes r{
-  0%{
+@keyframes r {
+  0% {
     left: 45px;
   }
-  100%{
+  100% {
   }
 }
 
-@keyframes k{
-  0%{
+@keyframes k {
+  0% {
     left: 55px;
   }
-  100%{
+  100% {
   }
 }
 
-@keyframes s{
-  0%{
+@keyframes s {
+  0% {
     left: 70px;
   }
-  100%{
+  100% {
   }
 }
 
 /* Video style */
+
+.wrapperGrid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "main sidebar-1 sidebar-2"
+    "footer footer footer";
+  grid-gap: 10px;
+  height: 500px;
+  margin: 0;
+  grid-template-rows: 50px 100px 100px;
+  grid-template-columns: 40px 400px 40px;
+}
+
+.header {
+  padding: 20px;
+  background-color: aqua;
+  grid-area: header;
+}
+
+.main {
+  padding: 20px;
+  background-color: violet;
+  grid-area: main;
+}
+
+.sidebar1 {
+  padding: 20px;
+  background-color: rgb(85, 215, 30);
+  grid-area: sidebar-1;
+  position: relative;
+  top: 10px;
+}
+
+.sidebar2 {
+  padding: 20px;
+  grid-area: sidebar-2;
+  background-color: orange;
+}
+
+.footer {
+  padding: 20px;
+  grid-area: footer;
+  background-color: burlywood;
+}
